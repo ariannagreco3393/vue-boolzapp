@@ -57,7 +57,7 @@
                                 placeholder="Cerca o inizia una nuova chat">
                         </div>
                         <div class="row open_chat">
-                            <div v-for="(contact, index) in contacts"  class="single_chat user d-flex align-items-center">
+                            <div v-for="(contact, index) in contacts"  class="single_chat user d-flex align-items-center" :class="contact_active === index ? 'active' : ''" @click="contact_active = index">
                                 <div class="avatar_user">
                                     <img :src="contact.avatar" alt="" class="img-fluid">
                                 </div>
@@ -69,9 +69,6 @@
                                     <small>12:00</small>
                                 </div>
                             </div>
-                           
-
-
 
                             <!-- chat aperte -->
                         </div>
@@ -97,28 +94,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row p-5 bg_chat">
-                            <div class="col-6 mt_7">
-                                <div class="recived_message">
-                                    <p>tutto fatto!</p>
-                                    <div class="message_hours d-flex justify-content-end">
-                                        <small>16:15</small>
-                                    </div>
+                        <div class="row body_message">
+                            <div class="container_messages">
+                                <div class="message" :class="message.status === 'sent' ? 'bg_green' : 'bg_white'" v-for="message in contacts[contact_active].messages">
+                                    <p>{{message.message}}</p>
+                                    <small class="time_message">{{message.date}}</small>
                                 </div>
-                            </div>
-                            <div class="col-6 mt-5">
-                                <div class="send_message">
-                                    <p>hai portato a spasso il cane?</p>
-                                    <div class="message_hours d-flex justify-content-end">
-                                        <small>15:30</small>
-                                    </div>
-                                </div>
-                                <div class="send_message mt-2">
-                                    <p>hai portato a spasso il cane?</p>
-                                    <div class="message_hours d-flex justify-content-end">
-                                        <small>15:50</small>
-                                    </div>
-                                </div>
+                                <!-- /.message -->
                             </div>
                         </div>
                         <div class="row messages_footer align-items-center">
