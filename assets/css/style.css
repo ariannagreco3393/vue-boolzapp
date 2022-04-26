@@ -130,14 +130,6 @@ notifiche
     text-decoration: underline;
 }
 
-/* 
-bg_chat
-*/
-
-.bg_chat {
-    height: 700px;
-    background-image: url('/assets/img/mine.jpg')
-}
 
 .search {
     background-color: rgb(250, 250, 250);
@@ -190,6 +182,42 @@ open chat
     top: 2px;
     right: 10px;
 }
+
+/* 
+bg_chat
+*/
+
+.mt_7 {
+    margin-top: 11rem;
+}
+
+.bg_chat {
+    height: 700px;
+    background-image: url('/assets/img/mine.jpg');
+}
+
+
+/* 
+messages
+*/
+
+.send_message {
+    background-color: var(--bg_send_msg);
+    padding: 0.3rem 0.5rem;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.recived_message {
+    background-color: var(--white);
+    padding: 0.3rem 0.5rem;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+
+
+
 
 
 
