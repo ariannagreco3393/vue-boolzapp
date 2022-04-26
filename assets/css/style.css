@@ -63,16 +63,19 @@ main
 }
 
 .chat {
-    background-color: var(--contact_topbar);
+    background-color: var(--white);
 }
+
 
 .my_account {
     border-right: 0.5px solid var(--icons_light);
     height: 60px;
+    background-color: var(--contact_topbar);
 }
 
 .messages {
     height: 60px;
+    background-color: var(--contact_topbar);
 }
 
 
@@ -132,7 +135,7 @@ bg_chat
 */
 
 .bg_chat {
-    height: 500px;
+    height: 700px;
     background-image: url('/assets/img/mine.jpg')
 }
 
@@ -164,8 +167,30 @@ bg_chat
 .search_icon > i {
     font-size: 14px;
     color: var(--icons_light);
-
 }
+
+/* 
+open chat
+*/
+
+.open_chat {
+    background-color: var(--white);
+}
+
+.single_chat {
+    border-top: 0.3px solid rgba(205, 203, 203, 0.445);
+    position: relative;
+    padding: 0.5rem;
+}
+
+
+
+.hours > small {
+    position: absolute;
+    top: 2px;
+    right: 10px;
+}
+
 
 
 
