@@ -1,0 +1,38 @@
+/* 
+Colors
+*/
+
+:root {
+--black: rgba(0, 0, 0, 1);
+--topbar_color: rgba(0, 150, 136, 1);
+--icons_dark: rgba(107, 115, 118, 1);
+--notifiche: rgba(142, 218, 252, 1);
+--icons_light: rgba(177, 177, 177, 1);
+--primary_color: rgba(218, 219, 212, 1);
+--contact_topbar: rgba(234, 234, 234, 1);
+--bg_notifiche: rgba(242, 251, 255, 1);
+--new_message: rgba(243, 238, 234, 1);
+--bg_send_msg: rgba(213, 249, 186, 1);
+--white: #ffffff;
+}
+
+/* 
+body
+*/
+
+body {
+    font-family: Helvetica, sans-serif;
+}
+
+
+
+#main {
+    height: calc(100vh - 120px);
+    background-color: var(--primary_color);
+}
+
+.topbar {
+    background-color: var(--topbar_color);
+    height: 120px;
+}
+
