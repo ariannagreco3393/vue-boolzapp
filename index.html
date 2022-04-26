@@ -57,102 +57,19 @@
                                 placeholder="Cerca o inizia una nuova chat">
                         </div>
                         <div class="row open_chat">
-                            <div class="single_chat user d-flex align-items-center">
+                            <div v-for="(contact, index) in contacts"  class="single_chat user d-flex align-items-center">
                                 <div class="avatar_user">
-                                    <img src="./assets/img/avatar_1.jpg" alt="" class="img-fluid">
+                                    <img :src="contact.avatar" alt="" class="img-fluid">
                                 </div>
                                 <div class="avatar_status d-flex flex-column p-2">
-                                    <div class="username fs_7">Michele</div>
+                                    <div class="username fs_7">{{contact.name}}</div>
                                     <small>Ultimo messaggio inviato</small>
                                 </div>
                                 <div class="hours">
                                     <small>12:00</small>
                                 </div>
                             </div>
-                            <div class="single_chat user d-flex align-items-center">
-                                <div class="avatar_user">
-                                    <img src="./assets/img/avatar_1.jpg" alt="" class="img-fluid">
-                                </div>
-                                <div class="avatar_status d-flex flex-column p-2">
-                                    <div class="username fs_7">Michele</div>
-                                    <small>Ultimo messaggio inviato</small>
-                                </div>
-                                <div class="hours">
-                                    <small>12:00</small>
-                                </div>
-                            </div>
-                            <div class="single_chat user d-flex align-items-center">
-                                <div class="avatar_user">
-                                    <img src="./assets/img/avatar_1.jpg" alt="" class="img-fluid">
-                                </div>
-                                <div class="avatar_status d-flex flex-column p-2">
-                                    <div class="username fs_7">Michele</div>
-                                    <small>Ultimo messaggio inviato</small>
-                                </div>
-                                <div class="hours">
-                                    <small>12:00</small>
-                                </div>
-                            </div>
-                            <div class="single_chat user d-flex align-items-center">
-                                <div class="avatar_user">
-                                    <img src="./assets/img/avatar_1.jpg" alt="" class="img-fluid">
-                                </div>
-                                <div class="avatar_status d-flex flex-column p-2">
-                                    <div class="username fs_7">Michele</div>
-                                    <small>Ultimo messaggio inviato</small>
-                                </div>
-                                <div class="hours">
-                                    <small>12:00</small>
-                                </div>
-                            </div>
-                            <div class="single_chat user d-flex align-items-center">
-                                <div class="avatar_user">
-                                    <img src="./assets/img/avatar_1.jpg" alt="" class="img-fluid">
-                                </div>
-                                <div class="avatar_status d-flex flex-column p-2">
-                                    <div class="username fs_7">Michele</div>
-                                    <small>Ultimo messaggio inviato</small>
-                                </div>
-                                <div class="hours">
-                                    <small>12:00</small>
-                                </div>
-                            </div>
-                            <div class="single_chat user d-flex align-items-center">
-                                <div class="avatar_user">
-                                    <img src="./assets/img/avatar_1.jpg" alt="" class="img-fluid">
-                                </div>
-                                <div class="avatar_status d-flex flex-column p-2">
-                                    <div class="username fs_7">Michele</div>
-                                    <small>Ultimo messaggio inviato</small>
-                                </div>
-                                <div class="hours">
-                                    <small>12:00</small>
-                                </div>
-                            </div>
-                            <div class="single_chat user d-flex align-items-center">
-                                <div class="avatar_user">
-                                    <img src="./assets/img/avatar_1.jpg" alt="" class="img-fluid">
-                                </div>
-                                <div class="avatar_status d-flex flex-column p-2">
-                                    <div class="username fs_7">Michele</div>
-                                    <small>Ultimo messaggio inviato</small>
-                                </div>
-                                <div class="hours">
-                                    <small>12:00</small>
-                                </div>
-                            </div>
-                            <div class="single_chat user d-flex align-items-center">
-                                <div class="avatar_user">
-                                    <img src="./assets/img/avatar_1.jpg" alt="" class="img-fluid">
-                                </div>
-                                <div class="avatar_status d-flex flex-column p-2">
-                                    <div class="username fs_7">Michele</div>
-                                    <small>Ultimo messaggio inviato</small>
-                                </div>
-                                <div class="hours">
-                                    <small>12:00</small>
-                                </div>
-                            </div>
+                           
 
 
 
