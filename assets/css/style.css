@@ -79,6 +79,21 @@ contacts
     border-radius: 50%;
 }
 
+.user_details {
+    gap: 1rem;
+    color: var(--icons_light);
+    font-size: 18px;
+}
+
+small {
+    font-size: 10px;
+    color: var(--icons_light);
+}
+
+.avatar_status{
+    gap: 0;
+}
+
 
 
 
