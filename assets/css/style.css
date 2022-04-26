@@ -192,8 +192,8 @@ bg_chat
 }
 
 .bg_chat {
-    height: 700px;
     background-image: url('/assets/img/mine.jpg');
+    height: 600px;
 }
 
 
@@ -212,6 +212,28 @@ messages
     background-color: var(--white);
     padding: 0.3rem 0.5rem;
     border-radius: 10px;
+    font-size: 14px;
+}
+
+/* 
+footer messages
+*/
+
+.messages_footer{
+    background-color: var(--new_message);
+    height: 50px;
+}
+
+.messages_footer i {
+    color: var(--icons_dark);
+    font-size: 18px;
+}
+
+.messages_footer input {
+    border: none;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 4px;
     font-size: 14px;
 }
 
