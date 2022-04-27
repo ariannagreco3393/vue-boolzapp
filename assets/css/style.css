@@ -175,6 +175,10 @@ open chat
     padding: 0.5rem;
 }
 
+.single_chat:hover{
+    background-color:rgba(194, 191, 191, 0.536);
+}
+
 
 
 .hours > small {
