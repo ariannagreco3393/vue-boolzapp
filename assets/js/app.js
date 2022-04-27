@@ -206,19 +206,15 @@ const app = new Vue({
                 message: '',
                 status: 'sent'
             }
-            setTimeout(answer, 1000)
-
-
-            function answer() {
+            setTimeout(() => {
                 const message = {
                     date: '10/01/2020 16:00:00',
                     message: 'ok',
                     status: 'received'
                 }
+
                 this.contacts[this.contact_active].messages.push(message)
-            
-            }
-            
+            } , 1000)
         }
     }
 })
