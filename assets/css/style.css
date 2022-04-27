@@ -37,6 +37,9 @@ small {
     color: var(--icons_light);
 }
 
+input:focus {
+    outline: none;
+  }
 
 
 /* 
