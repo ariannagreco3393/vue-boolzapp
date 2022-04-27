@@ -57,7 +57,8 @@
                                 placeholder="Cerca o inizia una nuova chat">
                         </div>
                         <div class="row open_chat">
-                            <div v-for="(contact, index) in contacts"  class="single_chat user d-flex align-items-center" :class="contact_active === index ? 'active' : ''" @click="contact_active = index">
+                            <div v-for="(contact, index) in contacts" class="single_chat user d-flex align-items-center"
+                                :class="contact_active === index ? 'active' : ''" @click="contact_active = index">
                                 <div class="avatar_user">
                                     <img :src="contact.avatar" alt="" class="img-fluid">
                                 </div>
@@ -77,10 +78,10 @@
                             <div class="col-6">
                                 <div class="user d-flex align-items-center">
                                     <div class="avatar_user">
-                                        <img src="./assets/img/avatar_1.jpg" alt="" class="img-fluid">
+                                        <img :src="contacts[contact_active].avatar" alt="" class="img-fluid">
                                     </div>
                                     <div class="avatar_status d-flex flex-column p-2">
-                                        <div class="username fs_7">Michele</div>
+                                        <div class="username fs_7">{{contacts[contact_active].name}}</div>
                                         <small>Ultimo accesso oggi alle 12:00</small>
                                     </div>
                                 </div>
@@ -95,7 +96,8 @@
                         </div>
                         <div class="row body_message">
                             <div class="container_messages">
-                                <div class="message" :class="message.status === 'sent' ? 'bg_green' : 'bg_white'" v-for="message in contacts[contact_active].messages">
+                                <div class="message" :class="message.status === 'sent' ? 'bg_green' : 'bg_white'"
+                                    v-for="message in contacts[contact_active].messages">
                                     <p>{{message.message}}</p>
                                     <small class="time_message">{{message.date}}</small>
                                 </div>
@@ -107,7 +109,7 @@
                                 <i class="fa-regular fa-face-smile"></i>
                             </div>
                             <div class="col-10 d-flex justify-content-center">
-                                <input type="text" name="" id="" placeholder="Scrivi un messaggio">
+                                <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage.message" @keyup.enter="addMessage">
                             </div>
                             <div class="col-1 d-flex justify-content-center">
                                 <i class="fa-solid fa-microphone"></i>
