@@ -28,10 +28,11 @@ const app = new Vue({
 
         contact_active: 0,
         newMessage: {
-            date: '10/01/2020 16:00:00',
+            date: new Date().toLocaleString('it'),
             message: '',
             status: 'sent'
         },
+        searchContact: '',
         contacts: [
             {
                 name: 'Michele',
@@ -202,19 +203,30 @@ const app = new Vue({
             //console.log('hai premuto enter');
             this.contacts[this.contact_active].messages.push(this.newMessage)
             this.newMessage = {
-                date: '10/01/2020 16:00:00',
+                date: new Date().toLocaleString('it'),
                 message: '',
                 status: 'sent'
             }
+
             setTimeout(() => {
                 const message = {
-                    date: '10/01/2020 16:00:00',
+                    date: new Date().toLocaleString('it'),
                     message: 'ok',
                     status: 'received'
                 }
-
                 this.contacts[this.contact_active].messages.push(message)
             } , 1000)
-        }
-    }
+        },
+
+        filter(contact, index) {
+            const nomeContatto = contact.name.toLowerCase();
+            const searchContact = this.searchContact.toLowerCase();
+            if (!nomeContatto.includes(searchContact)) {
+              this.contacts[index].visible = false;
+            } else {
+              this.contacts[index].visible = true;
+            }
+            return this.contacts[index].visible;
+          }, 
+    },
 })
