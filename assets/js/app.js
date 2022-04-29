@@ -25,7 +25,10 @@ contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> 
 const app = new Vue({
     el: '#app',
     data: {
-
+        activeMessage:{
+            index: false,
+            status: false
+        },
         contact_active: 0,
         newMessage: {
             date: new Date().toLocaleString('it'),
@@ -228,5 +231,19 @@ const app = new Vue({
             }
             return this.contacts[index].visible;
           }, 
+
+          deleteCurrentMessage(index, messages){
+              messages.splice(index, 1)
+          },
+          toggleDropDown(index) {
+              if (this.activeMessage.index === index) {
+                  this.activeMessage.status = false
+                  this.activeMessage.index = false
+                  
+                  return
+              }
+              this.activeMessage.index = index
+              this.activeMessage.status = true
+          }
     },
 })

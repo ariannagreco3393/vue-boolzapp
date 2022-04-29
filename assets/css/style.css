@@ -260,6 +260,34 @@ footer messages
     font-size: 14px;
 }
 
+.icon_dropdown{
+    position: relative;
+}
+
+.icon_dropdown > i {
+    position: absolute;
+    bottom: 35px;
+    right: 0;
+    font-size: 10px;
+}
+
+.details_message {
+    background-color: var(--white);
+    width: 50%;
+    height: 80px;
+    padding: 1rem;
+    font-size: 12px;
+    border-radius: 0.2rem;
+    box-shadow: 3px 3px 4px 0px #6f6d6dcf;
+    position: absolute;
+    top: 20px;
+    right: 22px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+
+
 
 
 

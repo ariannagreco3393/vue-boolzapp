@@ -50,15 +50,17 @@
                             </div>
                         </div>
                         <div class="row search d-flex">
-                            <div class="col-2 search_icon d-flex justify-content-center align-items-center">
+                            <div class="col-2 search_icon d-flex justify-content-center align-items-center"
+                                @click="filter">
                                 <i class="fa-solid fa-search"></i>
                             </div>
-                            <input class="col-10 search_input" type="search" v-model="searchContact"
-                                @keyup="filter" placeholder="Cerca o inizia una nuova chat">
+                            <input class="col-10 search_input" type="search" v-model="searchContact" @keyup="filter"
+                                placeholder="Cerca o inizia una nuova chat">
                         </div>
                         <div class="row open_chat">
                             <div v-for="(contact, index) in contacts" class="single_chat user d-flex align-items-center"
-                                :class="contact_active === index ? 'active' : ''" @click="contact_active = index" v-if="filter(contact,index)">
+                                :class="contact_active === index ? 'active' : ''" @click="contact_active = index"
+                                v-if="filter(contact,index)">
                                 <div class="avatar_user">
                                     <img :src="contact.avatar" alt="" class="img-fluid">
                                 </div>
@@ -97,12 +99,18 @@
                         <div class="row body_message">
                             <div class="container_messages">
                                 <div class="message" :class="message.status === 'sent' ? 'bg_green' : 'bg_white'"
-                                    v-for="message in contacts[contact_active].messages">
+                                    v-for="(message,index) in contacts[contact_active].messages">
                                     <p>{{message.message}}</p>
                                     <small class="time_message">{{message.date}}</small>
-                                    <div class="icon-dropdown">
-                                        <i class="fa-solid fa-chevron-down"></i>
+                                    <div class="icon_dropdown">
+                                        <i @click="toggleDropDown(index)" class="fa-solid fa-chevron-down"></i>
                                     </div>
+                                    <div class="details_message" v-show="activeMessage.status && activeMessage.index === index">
+                                        <p>Info message</p>
+                                        <a @click="deleteCurrentMessage(index, contacts[contact_active].messages)">Delete
+                                            message</a>
+                                    </div>
+
                                 </div>
                                 <!-- /.message -->
                             </div>
